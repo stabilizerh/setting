@@ -47,7 +47,7 @@ filetype plugin indent on
 """" Tab settings
 
 set tabstop=4           " width that a <TAB> character displays as
-set expandtab           " convert <TAB> key-presses to spaces
+"set expandtab           " convert <TAB> key-presses to spaces
 set shiftwidth=4        " number of spaces to use for each step of (auto)indent
 set softtabstop=4       " backspace after pressing <TAB> will remove up to this many spaces
 
@@ -70,10 +70,6 @@ nnoremap <CR> :nohlsearch<CR><CR>
 "set background=dark    " configure Vim to use brighter colors
 "set autoread           " autoreload the file in Vim if it has been changed outside of Vim
 
-"autosave
-nmap <leader>w :w<cr>
-nmap <leader>l :open desktop/1/main.cpp
-nmap <space> /
 " 파일 인코딩을 한국어로
 if $LANG[0]=='k' && $LANG[1]=='o'
 set fileencoding=korea
@@ -82,3 +78,12 @@ endif
 " 컬러 스킴 사용
 "colorscheme jellybeans
 "colorscheme murphy      " good colorschemes: murphy, slate, molokai, badwolf, solarized
+
+"My vimrc
+nmap <leader>w :w<cr>
+nmap <leader>l :open desktop/1/main.cpp<cr>
+nmap <space> /
+set whichwrap+=h,l
+set backspace=indent,eol,start
+set cindent
+map ' `
