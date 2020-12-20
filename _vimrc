@@ -36,8 +36,10 @@ nmap k gk
 
 
 """" Vim Appearance
-
 " put colorscheme files in ~/.vim/colors/
+" 컬러 스킴 사용
+"colorscheme jellybeans
+"colorscheme murphy      " good colorschemes: murphy, slate, molokai, badwolf, solarized
 
 " use filetype-based syntax highlighting, ftplugins, and indentation
 syntax enable
@@ -53,7 +55,7 @@ set softtabstop=4       " backspace after pressing <TAB> will remove up to this 
 
 set autoindent          " copy indent from current line when starting a new line
 set smartindent         " even better autoindent (e.g. add indent after '{')
-
+set cindent
 
 """" Search settings
 
@@ -74,10 +76,6 @@ nnoremap <CR> :nohlsearch<CR><CR>
 if $LANG[0]=='k' && $LANG[1]=='o'
 set fileencoding=korea
 endif
-" 구문 강조 사용
-" 컬러 스킴 사용
-"colorscheme jellybeans
-"colorscheme murphy      " good colorschemes: murphy, slate, molokai, badwolf, solarized
 
 "My vimrc
 nmap <leader>w :w<cr>
@@ -85,5 +83,8 @@ nmap <leader>l :open desktop/1/main.cpp<cr>
 nmap <space> /
 set whichwrap+=h,l
 set backspace=indent,eol,start
-set cindent
 map ' `
+vmap / :norm i//<cr>
+vmap x :norm xx<cr>
+imap pb<tab> push_back(
+imap endl '\n'
